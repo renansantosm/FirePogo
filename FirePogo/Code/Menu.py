@@ -8,19 +8,17 @@ from Code.Const import WIN_WIDTH, COLOR_ORANGE, MENU_OPTION, COLOR_WHITE, COLOR_
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/menu.png')
+        self.surf = pygame.image.load('./asset/menu.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
         menu_option = 0
         pygame.mixer_music.load('./asset/menu_sound.mp3')
         pygame.mixer_music.play(-1)
-
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Fire", COLOR_ORANGE, ((WIN_WIDTH / 2), 70))
-            self.menu_text(50, "Pong", COLOR_ORANGE, ((WIN_WIDTH / 2), 120))
+            self.menu_text(50, "Fire Pong", COLOR_ORANGE, ((WIN_WIDTH / 2), 70))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
