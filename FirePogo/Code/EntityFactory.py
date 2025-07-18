@@ -1,5 +1,6 @@
 from Code.Background import Background
-from Code.Const import WIN_HEIGHT
+from Code.Ball import Ball
+from Code.Const import WIN_HEIGHT, WIN_WIDTH
 from Code.Player import Player
 
 
@@ -14,4 +15,8 @@ class EntityFactory:
                     list_bg.append(Background(f'Level1bg', (0,0)))
                 return list_bg
             case 'Player1':
-                return Player(f'Player1', (10, WIN_HEIGHT / 2))
+                return Player(f'Player1', (10, WIN_HEIGHT / 2), 'human')
+            case 'Player2':
+                return Player(f'Player2', (WIN_WIDTH - 55, WIN_HEIGHT / 2), 'ai')
+            case 'Ball':
+                return Ball(f'Ball', (WIN_WIDTH / 2, WIN_HEIGHT / 2))

@@ -5,7 +5,10 @@ COLOR_YELLOW = (255, 255, 0)
 
 # E
 ENTITY_SPEED = {
-    'Player1': 3
+    'Player1': 5,
+    'Player2': 5,
+    'BallX': 5,
+    'BallY': 5,
 }
 
 # M
